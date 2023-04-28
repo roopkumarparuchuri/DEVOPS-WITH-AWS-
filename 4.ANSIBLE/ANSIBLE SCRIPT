@@ -1,0 +1,46 @@
+	How to get the code from git
+=================================
+
+---
+ - hosts: localhost
+   tasks:
+     - name: Install git
+       yum: name=git state=present
+
+     - name: gather code
+       git:
+          repo: 'https://github.com/GREATCODERHYD/GITBRANCH.git'
+          dest: /home/mahesh/folder2/
+          
+          
+How to CREATE FILES IN LOCALHOST JENKINS
+============================================
+---
+- hosts: dev
+  user: rakesh
+  connection: ssh
+  become: yes
+
+  tasks:
+    - name: create file
+      file:
+         path: /home/rakesh/file1.txt
+         state: touch
+
+
+How to CREATE Folder IN LOCALHOST JENKINS
+=============================================
+---
+- hosts: dev
+  user: rakesh
+  become: yes
+  connection : ssh
+  tasks:
+    - name: file creation
+      file:
+        path: "jooush"
+        state: directory
+
+	How to add data in a file ansible
+=============================================
+
