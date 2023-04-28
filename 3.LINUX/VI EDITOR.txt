@@ -1,0 +1,49 @@
+2019-
+
+
+VIM EDITOR:
+
+WE HAVE 3 MODES
+1.COMMAND MODE
+2.INSERT VMODE
+3.SAVE & QUIT MODE
+
+
+1.COMMAND MODE:It is used to Executes the commands/Keys,
+  	gg:top of the line in a file
+	G:End of the line in file
+	3gg / :3 :goes to 3rd line of the code
+	
+	dd:To delete a line
+	u:undo-deleted line/file
+
+	yy: It copies entire line of the file
+	
+	3yy: It copies 3 lines of the file
+	 
+	p:prints the content
+	3p: prints 3 times
+	
+	:set number--To Set numbers a file.
+	/word OR ? word : find the word
+	I:Starting of the line
+		a: One Character ahead/fwd
+	O:creates a new Line -up
+	o:Creates a new line -down
+	A: End of the line
+	I: Starting of the line
+
+
+2.INSERT MODE:
+	i:Command mode to Insert Mode
+	ESC:Insert mode to ESC Mode
+	
+	
+3.SAVE & QUIT MODE
+	:w!--Save
+	:q!--direct quit from Vi to root terminal
+	:wq!--Save and quit fromVI to root termoinal
+	:wq!--forcefully save and quit from VI to terminal	
+
+==============================================================
+
