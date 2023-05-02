@@ -1,0 +1,164 @@
+Linux commands
+
+Command to login into root user (master)
+# sudo su (or) # sudo -i
+
+Command to create file
+# touch <file-name>
+
+Command to create directory (folder)
+# mkdir <dir-name>
+
+Command to check present working directory
+# pwd
+
+Command to list file and directories
+# ls
+
+Command for long list (list with details)
+# ls -l  (or) # ll
+
+Command to list all files
+# ls -a
+
+Command to create directory with sub-directories
+# mkdir -p <dir1/dir2/dir3>
+
+Command for change directory
+# cd <directory name>
+
+Command to remove file
+# rm <file-name>
+Or
+# rm -f <file-name>
+
+Command to remove directory
+#rmdir <dir-name>
+Or
+# rm -rf <dir-name> (this can use for both file and directory)
+
+Command to copy files
+# cp <source file-path> <dest file-path>
+
+Command to copy directory
+# cp -r <source file-path> <dest file-path>
+
+
+Command to move files
+# mv <source-path> <dest-path>
+
+Command to rename file/dir
+# mv <file/dir-name> <new-name>
+
+To edit file, there is vi, vim, nano editors
+
+Command to edit file
+# vi <file-name>
+To enter into insert or edit mode, press i
+To exit from insert mode, press esc (escape)
+To save and exit from the file, press esc and :wq
+:w-🡪 save
+:q-🡪 quit
+:q! 🡪 quit forcefully
+:set number 🡪 to get line numbers
+
+
+Command to add user
+# useradd <user-name>
+
+Command to give password for an user
+# passwd <user-name>
+
+User home directory will in the path ( /home)
+
+List of users present in the linux server can be check with the file called passwd in etc directory. To check (read), the command is, 
+# cat /etc/passwd
+
+Command to create group 
+# groupadd <group-name>
+
+Command to assign user to a group
+# usermod -a -G <group> <user>
+
+To check the list of groups, the path is /etc/group. To read, the command is,
+# cat /etc/group
+
+Command to check ip address
+# ifconfig
+
+Using chmod, we can change file/directory permissions (using numbers)
+# chmod 777 <file/dir-name>
+# chmod 660 <file/dir-name>
+# chmod 555 <file/dir-name>
+Here, first number is for owner, second is for group, third is for others
+Note:
+Numbers for permissions,
+Read 🡪 4
+Write 🡪 2
+Execute 🡪 1
+
+File permissions change (using letters)
+# chmod +x <file-name> 🡪 to add execute permission to all
+# chmod -r <file-name> 🡪 to remove read permission to all
+# chmod u+w <file-name> 🡪 to add write permission only for owner
+# chmod o-r <file-name> 🡪 to remove read permission only for others
+# chmod g+x <file-name> 🡪 to add execute permission only to group
+
+Note:
+Execute 🡪 x
+Write 🡪 w
+Read 🡪 r
+Group 🡪 g
+Others 🡪 o
+Owner 🡪 u
+
+command to change ownership of a file,
+# chown -R <uname>:<gname> <file>
+Command to download any file from internet using URL
+# wget <URL>
+
+‘yum’ is a package management
+
+Command to install any package,
+# yum install <package-name>
+
+Command to remove any package
+# yum remove <pkg-name>
+
+To install rpm packages, download rpm file using wget and run the below command,
+# rpm -ivh <file-name>
+
+Command to list all rpm packages in the server,
+# rpm -qa
+
+Search certain rpm package in the server,
+# rpm -qa | grep “<pkg-name>
+
+Command to remove rpm package
+# rpm -evh <pkg-name>
+
+Note:
+# grep is a command to search
+ivh means, install, verbose, human readable format
+e means, erase
+If any packages to install, which are not in yum repository, we have to download epel (extra package for enterprise linux). And then, have to run, #yum upgrade
+
+Establish ssh between 2 servers
+steps:
+run command # ssh-keygen
+# cat /root/.ssh/id_rsa.pub
+copy the content in the file
+login to another server and run,
+# vi /root/.ssh/authorised_keys
+then, paste the content in the file
+then, to login to remote server,
+# ssh <username>@<ip>
+to run commands on remote server,
+# ssh <u-name>@<ip> command
+
+copy files between 2 servers
+steps:
+establish ssh connection between those servers ( as above)
+then run the command,
+# scp <u-name>@<ip>:<file-path> <local-dest-path>
+# scp <local-file-path> <u-name>@<ip>:<remote-dest-path>
