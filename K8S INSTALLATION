@@ -1,0 +1,11 @@
+#yum install docker -y
+#systemctl start docker
+#curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+#sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+#curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+&& chmod +x minikube \
+&& sudo mv minikube /usr/local/bin/
+#yum install conntrack -y
+#minikube start --kubernetes-version=v1.23.8 --vm-driver=none
+#minikube status
+#
